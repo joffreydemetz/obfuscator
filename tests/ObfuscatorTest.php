@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace JDZ\EmailObfuscator\Tests;
+namespace JDZ\Obfuscator\Tests;
 
-use JDZ\EmailObfuscator\Obfuscator;
+use JDZ\Obfuscator\Obfuscator;
 use PHPUnit\Framework\TestCase;
 
 class ObfuscatorTest extends TestCase

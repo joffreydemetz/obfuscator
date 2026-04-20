@@ -8,7 +8,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use JDZ\EmailObfuscator\Obfuscator;
+use JDZ\Obfuscator\Obfuscator;
 
 $obfuscator = new Obfuscator();
 

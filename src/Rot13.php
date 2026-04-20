@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace JDZ\EmailObfuscator;
+namespace JDZ\Obfuscator;
 
 class Rot13
 {

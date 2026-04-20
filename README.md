@@ -15,7 +15,7 @@ composer require jdz/emailobfuscator
 ### PHP
 
 ```php
-use JDZ\EmailObfuscator\Obfuscator;
+use JDZ\Obfuscator\Obfuscator;
 
 $obfuscator = new Obfuscator();
 
@@ -32,7 +32,7 @@ echo $obfuscator->renderScript();
 ### Twig
 
 ```php
-use JDZ\EmailObfuscator\Extension\EmailObfuscatorTwigExtension;
+use JDZ\Obfuscator\Extension\EmailObfuscatorTwigExtension;
 
 $twig->addExtension(new EmailObfuscatorTwigExtension($obfuscator));
 ```

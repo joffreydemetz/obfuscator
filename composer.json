@@ -1,8 +1,8 @@
 {
-    "name": "jdz/emailobfuscator",
+    "name": "jdz/obfuscator",
     "type": "library",
     "description": "Server-side email obfuscation paired with the jizy-obfuscator JS client",
-    "homepage": "https://jdz.joffreydemetz.com/emailObfuscator",
+    "homepage": "https://jdz.joffreydemetz.com/obfuscator",
     "license": "MIT",
     "keywords": [
         "JDZ",
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "JDZ\\EmailObfuscator\\": "src"
+            "JDZ\\Obfuscator\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JDZ\\EmailObfuscator\\Tests\\": "tests"
+            "JDZ\\Obfuscator\\Tests\\": "tests"
         }
     },
     "scripts": {

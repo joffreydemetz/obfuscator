@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace JDZ\EmailObfuscator\Tests;
+namespace JDZ\Obfuscator\Tests;
 
-use JDZ\EmailObfuscator\Rot13;
+use JDZ\Obfuscator\Rot13;
 use PHPUnit\Framework\TestCase;
 
 class Rot13Test extends TestCase

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace JDZ\EmailObfuscator\Tests;
+namespace JDZ\Obfuscator\Tests;
 
-use JDZ\EmailObfuscator\Extension\EmailObfuscatorTwigExtension;
-use JDZ\EmailObfuscator\Obfuscator;
+use JDZ\Obfuscator\Extension\EmailObfuscatorTwigExtension;
+use JDZ\Obfuscator\Obfuscator;
 use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 use Twig\Loader\ArrayLoader;

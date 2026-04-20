@@ -8,8 +8,8 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use JDZ\EmailObfuscator\Extension\EmailObfuscatorTwigExtension;
-use JDZ\EmailObfuscator\Obfuscator;
+use JDZ\Obfuscator\Extension\EmailObfuscatorTwigExtension;
+use JDZ\Obfuscator\Obfuscator;
 use Twig\Environment;
 use Twig\Loader\ArrayLoader;
 

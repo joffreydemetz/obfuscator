@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace JDZ\EmailObfuscator\Extension;
+namespace JDZ\Obfuscator\Extension;
 
-use JDZ\EmailObfuscator\Obfuscator;
+use JDZ\Obfuscator\Obfuscator;
 use Twig\Extension\AbstractExtension as TwigAbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
