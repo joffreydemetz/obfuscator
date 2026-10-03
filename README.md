@@ -1,4 +1,4 @@
-# jdz/emailobfuscator
+# jdz/obfuscator
 
 Server-side email obfuscation paired with the [jizy-obfuscator](https://github.com/joffreydemetz/jizy-obfuscator) JS client.
 
@@ -7,10 +7,17 @@ Emits indexed `<span id="obfuscated-N">` placeholders and ROT13-encoded HTML pay
 ## Installation
 
 ```bash
-composer require jdz/emailobfuscator
+composer require jdz/obfuscator
 ```
 
+## Requirements
+
+- PHP 8.2 or higher
+- twig/twig ^3.0
+
 ## Usage
+
+Runnable samples live in `examples/` (`01-basic-usage.php`, `02-twig-integration.php`).
 
 ### PHP
 
@@ -58,6 +65,8 @@ $twig->addExtension(new EmailObfuscatorTwigExtension($obfuscator));
 | `getPayloads(): string[]` | ROT13-encoded payloads, ordered by index |
 | `renderScript(): string` | `<script>window.Obfuscator.decode([...])</script>` — empty when nothing registered |
 | `reset(): void` | clears collected payloads |
+
+The encoding itself is `JDZ\Obfuscator\Rot13::convert(string $s): string`.
 
 ### Twig extension
 
