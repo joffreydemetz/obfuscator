@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace JDZ\Obfuscator\Tests;
 
 use JDZ\Obfuscator\Obfuscator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class ObfuscatorTest extends TestCase
@@ -90,5 +91,25 @@ class ObfuscatorTest extends TestCase
 
         $this->assertSame([], $o->getPayloads());
         $this->assertSame('<span id="obfuscated-0"></span>', $o->obfuscate('other@example.com'));
+    }
+
+    public static function attributes(): array
+    {
+        return [
+            'a true attribute is bare' => [['download' => true], '<a download href="mailto:joe@example.com">Joe</a>'],
+            'false and null are left out' => [['hidden' => false, 'title' => null], '<a href="mailto:joe@example.com">Joe</a>'],
+            'a value is escaped' => [['title' => 'Say "hi" & <wave>'], '<a title="Say &quot;hi&quot; &amp; &lt;wave&gt;" href="mailto:joe@example.com">Joe</a>'],
+            'zero is a value' => [['tabindex' => 0], '<a tabindex="0" href="mailto:joe@example.com">Joe</a>'],
+            'a given href is replaced by the mailto' => [['href' => 'https://elsewhere.example'], '<a href="mailto:joe@example.com">Joe</a>'],
+        ];
+    }
+
+    #[DataProvider('attributes')]
+    public function testAttributesAreRenderedOnTheAnchor(array $attrs, string $anchor): void
+    {
+        $o = new Obfuscator();
+        $o->obfuscate('joe@example.com', 'Joe', $attrs);
+
+        $this->assertSame($anchor, \str_rot13($o->getPayloads()[0]));
     }
 }
